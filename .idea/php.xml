@@ -6,8 +6,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/Asserts/JS" />
-      <path value="$PROJECT_DIR$/vendor/Asserts/CSS" />
     </include_path>
   </component>
 </project>
