@@ -2,3 +2,4 @@ vendor
 
 composer.lock
 .idea
+.idea/workspace.xml
