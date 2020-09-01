@@ -20,7 +20,9 @@ class Home extends \Core\Controller
      */
     public function indexAction()
     {
-        sql::db_Insert("sp_test","tblFilm",["FilmName"=>"Testmovie2","FilmReleaseDate"=>date("Y/m/d"),"FilmRunTimeMinutes"=>60]);
+        sql::db_Insert("sp_test","tblFilm",
+            ["FilmName"=>"Testmovie2","FilmReleaseDate"=>date("Y/m/d"),"FilmRunTimeMinutes"=>60]
+        );
         die();
         View::renderTemplate('Home/index.html');
     }
