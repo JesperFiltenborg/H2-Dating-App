@@ -24,6 +24,7 @@ CREATE TALBE profile(
     rating int(5) NOT NULL DEFAULT 2,
     creationDate DATE NOT NULL,
     banLenght NOT NULL,
+    photosId INT NOT NULL,
     
 );
 CREATE TABLE preferences(
@@ -52,4 +53,6 @@ ALTER TABLE account
 ADD FOREIGN KEY (city) REFERENCES zipBy(city);
 ALTER TABLE profile
 ADD FOREIGN KEY (accountId) REFERENCES account(id);
+ALTER TABLE profile
+ADD FOREIGN KEY (photosId) REFERENCES photos(id);
 
