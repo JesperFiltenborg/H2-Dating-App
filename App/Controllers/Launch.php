@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\LoggedIn;
 use App\Models\sql;
 use \Core\View;
 use \Core\Model;
@@ -20,6 +21,13 @@ class Launch extends \Core\Controller
      */
     public function login_launchAction()
     {
-        View::renderTemplate('Home/login_page.html');
+        if(isset($_SESSION["LoginState"]) && $_SESSION["LoginState"] != 1){
+            View::renderTemplate('Home/login_page.html',[
+                "log_setting" => "login"
+            ]);
+        }else{
+            LoggedIn::login(1,"1","1");
+        }
+
     }
 }
