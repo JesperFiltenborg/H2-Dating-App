@@ -20,6 +20,6 @@ class Launch extends \Core\Controller
      */
     public function login_launchAction()
     {
-        View::renderTemplate('Home/index.html');
+        View::renderTemplate('Home/login_page.html');
     }
 }
