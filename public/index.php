@@ -28,14 +28,14 @@ $router = new Core\Router();
 // Add the routes
 $router->add('', ['controller' => 'Home', 'action' => 'index']);
 //login
-$router->add('login', ['controller' => 'Launch', 'action' => 'login_launch']);
-$router->add('logged_on', ['controller' => 'Launch', 'action' => 'login_check']);
-$router->add('login/{password:\.}', ['controller' => 'Launch', 'action' => 'login_action']);
+$router->add('login', ['controller' => 'Login', 'action' => 'login_Login']);
+$router->add('login/check', ['controller' => 'Login', 'action' => 'login_check']);
+$router->add('login/attempt', ['controller' => 'Login', 'action' => 'login_attempt']);
 
 //Access when logged in
-$router->add('profile', ['controller' => 'Launch', 'action' => 'profile_page']);
-$router->add('swipe_page', ['controller' => 'Launch', 'action' => 'swipe_page']);
-$router->add('matches', ['controller' => 'Launch', 'action' => 'matches_page']);
+$router->add('profile', ['controller' => 'Login', 'action' => 'profile_page']);
+$router->add('swipe_page', ['controller' => 'Login', 'action' => 'swipe_page']);
+$router->add('matches', ['controller' => 'Login', 'action' => 'matches_page']);
 $router->add('{controller}/{action}');
     
 $router->dispatch($_SERVER['QUERY_STRING']);

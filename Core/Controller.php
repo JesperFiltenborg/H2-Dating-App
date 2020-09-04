@@ -25,6 +25,7 @@ abstract class Controller
      */
     public function __construct($route_params)
     {
+        session_start();
         $this->route_params = $route_params;
     }
 

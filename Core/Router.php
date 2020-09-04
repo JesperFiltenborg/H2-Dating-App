@@ -20,7 +20,7 @@ class Router
      * Parameters from the matched route
      * @var array
      */
-    protected $params = [];
+    public $params = [];
 
     /**
      * Add a route to the routing table
@@ -91,6 +91,7 @@ class Router
      */
     public function getParams()
     {
+        $GLOBALS["params"]=$this->params;
         return $this->params;
     }
 

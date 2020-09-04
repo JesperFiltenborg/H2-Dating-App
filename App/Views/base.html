@@ -2,18 +2,22 @@
 <html style="overflow-x: hidden">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
+    <title>Nightly {% block title %}{% endblock %}</title>
     <link rel="icon" href="https://ih1.redbubble.net/image.1094756177.1140/st,small,845x845-pad,1000x1000,f8f8f8.jpg">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
-<body class="row">
-    <nav class="col-12 navbar navbar-expand-lg text-uppercase p-0" style=" background: linear-gradient(98deg, #e9aa43, #e09220 18%, #e9aa43 32%, #e9aa43 67%, #e09220 83%, #e9aa43)">
+<body class="row" style="background-image: url('https://djmag.com/sites/default/files/article/image/nightclub-facilities-at-foster-city-california-restaurant-top.jpg');background-size: cover">
+    <nav class="col-12 navbar navbar-expand-lg text-uppercase p-0" style="z-index: 99; background: linear-gradient(98deg, #e9aa43, #e09220 18%, #e9aa43 32%, #e9aa43 67%, #e09220 83%, #e9aa43)">
         <div class="container" style="background: linear-gradient(120deg, rgba(255,255,255,0) 32%, #f4d37c 50%, rgba(255,255,255,0) 67%)">
             <h1 class="modal-title">Nightly</h1>
             <p class="modal-title">Get the perfect night every night</p>
-            <button class="btn">{{log_setting}}</button>
+            <a href="login" class="btn">{{log_setting}}</a>
         </div>
     </nav>
+    <div class="col-12">
+        {% block full_page %}
+        {% endblock %}
+    </div>
     <div class="col-3">
         {% block aside %}
         {% endblock %}
