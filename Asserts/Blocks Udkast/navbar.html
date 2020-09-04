@@ -1,0 +1,39 @@
+<style>
+body{
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(255,161,14,0.2);
+}
+.active {
+  background-color: rgb(255,161,14);
+}
+</style>
+
+<ul>
+  <li><a href="#home">Find Match</a></li>
+  <li><a href="#news">Matches</a></li>
+  <li><a href="#contact">Messages</a></li>
+  <li style="float:right"><a class="active" href="#about">Profile</a></li>
+</ul>

@@ -43,7 +43,7 @@ CREATE TABLE photos(
     url8 VARCHAR DEFAULT NULL,
     url9 VARCHAR DEFAULT NULL
 );
-CREATE TALBE zip(
+CREATE TALBE city(
     zip INT(4) NOT NULL,
     city varchar(30) NOT NULL
 );
