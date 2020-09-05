@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Account{% endblock %}
+
+{% block full_page %}
+<div class="container mt-5 p-5 col-4">
+    <div class="card p-4 border-dark" style="background-color: rgba(255,255,255,0.87)">
+        <h1 class="card-title ml-3">Create Account</h1>
+        <div class="card-body ml-3">
+            <form method="get" action="profile">
+                <label class="col-12" for="email">Email</label>
+                <input id="email" class="col-12 mb-3" type="email" placeholder="Email" required>
+
+                <label class="col-5" for="zipcode">Zip code</label>
+                <label class="col-6 float-right" for="City">City</label>
+                <input id="zipcode" class="col-5 mr-2" type="text" placeholder="Zip-code" required>
+                <input id="City" class="col-6 float-right" type="text" placeholder="City" required>
+
+                <label class="col-12 mt-3" for="address">Address</label>
+                <input id="address" class="col-12 mb-3" type="text" placeholder="Address" required>
+                <label class="col-12" for="phone">Phone</label>
+                <input id="phone" type="tel" class="col-12" placeholder="0000-0000">
+                <input class="col-12 mt-3 btn btn-success" type="submit" value="Create">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -19,8 +19,15 @@ class Home extends \Core\Controller
      */
     public function indexAction()
     {
-        View::renderTemplate('Home/front_page.html', [
-            "log_setting" => "Login"
+        View::renderTemplate('base.html', [
+            "log_setting" => "Login",
+            "baseUrl"       => $_SESSION["htmlPath"]
+        ]);
+    }
+    public function swipe_pageAction(){
+        View::renderTemplate('Home/Swipe_Page.html',[
+            "log_setting" => "Login",
+            "baseUrl"       => $_SESSION["htmlPath"]
         ]);
     }
 }

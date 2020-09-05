@@ -29,12 +29,14 @@ $router = new Core\Router();
 $router->add('', ['controller' => 'Home', 'action' => 'index']);
 //login
 $router->add('login', ['controller' => 'Login', 'action' => 'login_Login']);
-$router->add('login/check', ['controller' => 'Login', 'action' => 'login_check']);
 $router->add('login/attempt', ['controller' => 'Login', 'action' => 'login_attempt']);
 
 //Access when logged in
+$router->add('create/account', ['controller' => 'Create', 'action' => 'Create_Account']);
+$router->add('create/login', ['controller' => 'Create', 'action' => 'Create_Login']);
+$router->add('create/profile', ['controller' => 'Create', 'action' => 'Create_Profile']);
 $router->add('profile', ['controller' => 'Login', 'action' => 'profile_page']);
-$router->add('swipe_page', ['controller' => 'Login', 'action' => 'swipe_page']);
+$router->add('swipe_page', ['controller' => 'Home', 'action' => 'swipe_page']);
 $router->add('matches', ['controller' => 'Login', 'action' => 'matches_page']);
 $router->add('{controller}/{action}');
     

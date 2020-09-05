@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Account{% endblock %}
+
+{% block full_page %}
+<div class="container mt-5 p-5 col-4">
+    <div class="card p-4 border-dark" style="background-color: rgba(255,255,255,0.87)">
+        <h1 class="card-title ml-3">Create Login</h1>
+        <div class="card-body ml-3">
+            <form method="get" action="account">
+                <label class="col-12" for="Username">Username</label>
+                <input id="Username" class="col-12 mb-3" type="text" placeholder="Username" required>
+                <label class="col-12" for="Password">Password</label>
+                <input id="Password" class="col-12 mb-3" type="password" placeholder="Password" required>
+                <input id="2Password" class="col-12 mb-3" type="password" placeholder="Password" required>
+                <input class="col-12 mt-3 btn btn-success" type="submit" value="Create">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

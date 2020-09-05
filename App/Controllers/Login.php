@@ -15,17 +15,17 @@ class Login extends \Core\Controller
 {
     public function login_LoginAction()
     {
-        if(isset($_SESSION["LoginState"]) && $_SESSION["LoginState"] == 1){
-            View::renderTemplate('Home/login_page.html',[
-                "log_setting" => "Login"
-            ]);
-        }else{
-            LoggedIn::login(1,"1","1");
-        }
+        $_SESSION["htmlPath"] = $_SERVER['HTTP_REFERER'];
+        View::renderTemplate('Home/login_page.html',[
+            "log_setting"   => "Login",
+            "baseUrl"       => $_SESSION["htmlPath"]
+        ]);
     }
     public function login_attemptAction(){
         $params = $GLOBALS["_GET"];
         //todo Make a function to check the database for matching username and password
         $_SESSION["LoginState"] = 1;
+        header('Location: '.$_SESSION["htmlPath"]."create/account");
+        die();
     }
 }
