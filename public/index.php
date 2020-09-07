@@ -30,6 +30,7 @@ $router->add('', ['controller' => 'Home', 'action' => 'index']);
 //login
 $router->add('login', ['controller' => 'Login', 'action' => 'login_Login']);
 $router->add('login/attempt', ['controller' => 'Login', 'action' => 'login_attempt']);
+$router->add('logout', ['controller' => 'Login', 'action' => 'logout_attempt']);
 
 //Access when logged in
 $router->add('create/account', ['controller' => 'Create', 'action' => 'Create_Account']);

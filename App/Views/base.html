@@ -14,7 +14,7 @@
             {% if log_setting == "Login" %}
             <a href="{{baseUrl}}{{log_setting}}" class="btn">{{log_setting}}</a>
             {% elseif log_setting == "Logout" %}
-            <a href="{{baseUrl}}" class="btn">{{log_setting}}</a>
+            <a href="{{baseUrl}}{{log_setting}}" class="btn">{{log_setting}}</a>
             {% else %}
             <a></a>
             {% endif %}
