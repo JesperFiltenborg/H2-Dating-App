@@ -20,8 +20,7 @@ class Home extends \Core\Controller
     public function indexAction()
     {
         View::renderTemplate('base.html', [
-            "log_setting" => "Login",
-            "baseUrl"       => $_SESSION["htmlPath"]
+            "log_setting" => "Login"
         ]);
     }
     public function swipe_pageAction(){

@@ -23,11 +23,12 @@ class sql
         }
         return $result;
     }
-    public static function db_Insert($database, $table, $data){
-        $connection = new \mysqli(Config::DB_NAME,Config::DB_HOST,Config::DB_PASSWORD,$database) or die("Unable to connect to database");
-        $datakeys   = self::get_arraykeys_as_string($data);
+    public static function db_Insert($database, $table, $data)
+    {
+        $connection = new \mysqli(Config::DB_NAME, Config::DB_HOST, Config::DB_PASSWORD, $database) or die("Unable to connect to database");
+        $datakeys = self::get_arraykeys_as_string($data);
         $datavalues = self::get_array_as_string($data);
-        $statement  = sprintf("INSERT INTO %s (%s) VALUES(%s)",$table,$datakeys,$datavalues);
+        $statement = sprintf("INSERT INTO %s (%s) VALUES(%s)", $table, $datakeys, $datavalues);
         if ($connection->query($statement) === TRUE) {
             echo "New record created successfully";
         } else {
