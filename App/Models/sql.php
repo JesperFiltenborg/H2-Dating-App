@@ -36,8 +36,7 @@ class sql
     }
     public static function db_Select($database, $table, $columns = [], $where = "*"){
         $connection = new \mysqli(Config::DB_NAME,Config::DB_HOST,Config::DB_PASSWORD,$database) or die("Unable to connect to database");
-        $columnkeys = self::get_arraykeys_as_string($columns);
-        $statement = sprintf("SELECT %s FROM %s WHERE ",$columnkeys,$table);
+        $statement = sprintf("SELECT %s FROM %s WHERE %s",$columns,$table,$where);
     }
     public static function db_Update($database, $table, $data){
         $connection = new \mysqli(Config::DB_HOST,Config::DB_HOST,Config::DB_PASSWORD,$database) or die("Unable to connect to database");
