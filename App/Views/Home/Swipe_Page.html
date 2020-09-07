@@ -4,7 +4,17 @@
 {% block aside %}
 <div class="col-12">
     <div class="card p-4 border-dark" style="background-color: rgba(255,255,255,0.97); height: 93vh">
-        ProfilePage
+        <label for="new_matches">New matches</label>
+        <div id="new_matches" style="overflow: auto;white-space: nowrap;">
+            {% for i in 0..50 %}
+            {{ i }}
+            {% endfor %}
+        </div>
+        <label for="matches">Matches</label>
+        <div id="matches" style="overflow-x:scroll;height: 80vh; white-space: nowrap;"  >
+            {% for i in 0..50 %}
+            {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}
