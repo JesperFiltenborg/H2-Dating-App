@@ -8,24 +8,24 @@
         <h1 class="card-title ml-3">Create Profile</h1>
         <div class="card-body ml-3">
             <form method="get" action="profile">
-                <label class="col-12" for="text">Name</label>
-                <input id="text" class="col-12 mb-3" type="text" placeholder="Name" required>
+                <label class="col-12 p-0" for="text">Your name</label>
+                <input id="text" class="col-12 mb-3 pl-1" type="text" placeholder="Name" required>
 
-                <label class="col-5 mt-3" for="birthday">Birthday</label>
-                <label class="col-5 float-right mt-3" for="gender">Gender</label>
-                <input type="date" id="birthday" class="col-5 mb-3" name="birthday" required>
-                <select class="form-control border-dark col-5 float-right" name="gender" id="gender">
+                <label class="col-5 mt-3 p-0" for="birthday">Your birthday</label>
+                <label class="col-5 float-right mt-3 p-0" for="gender">Your gender</label>
+                <input type="date" id="birthday" class="col-5 mb-3 pl-1" name="birthday" required>
+                <select class="form-control border-dark col-5 float-right pl-1" name="gender" id="gender">
                     <option value="Man">Man</option>
-                    <option value="Women">Women</option>
+                    <option value="Woman">Woman</option>
                 </select>
-                <label class="col-12 mt-3" for="preference">Preference</label>
-                <select class="form-control border-dark mb-3" name="preference" id="preference">
+                <label class="col-12 mt-3 p-0" for="preference">Your preference</label>
+                <select class="form-control border-dark mb-3 pl-1" name="preference" id="preference">
                     <option value="hetrosexual">Hetrosexual</option>
                     <option value="homosexual">Homosexual</option>
                     <option value="bisexual">Bisexual</option>
                 </select>
                 <label for="description">Description</label>
-                <textarea class="form-control border-dark" rows="5" id="description"></textarea>
+                <textarea class="form-control border-dark p-0" rows="5" id="description"></textarea>
                 <input class="col-12 mt-3 btn btn-success" type="submit" value="Create">
             </form>
         </div>
