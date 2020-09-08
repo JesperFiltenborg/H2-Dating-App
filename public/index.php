@@ -32,6 +32,9 @@ $router->add('login', ['controller' => 'Login', 'action' => 'login_Login']);
 $router->add('login/attempt', ['controller' => 'Login', 'action' => 'login_attempt']);
 $router->add('logout', ['controller' => 'Login', 'action' => 'logout_attempt']);
 
+//Test OF Database
+$router->add('TestDB', ['controller' => 'Home', 'action' => 'testDB']);
+
 //Access when logged in
 $router->add('create/account', ['controller' => 'Create', 'action' => 'Create_Account']);
 $router->add('create/login', ['controller' => 'Create', 'action' => 'Create_Login']);

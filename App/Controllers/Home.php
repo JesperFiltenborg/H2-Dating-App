@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\sql;
 use \Core\View;
 
 /**
@@ -35,5 +36,29 @@ class Home extends \Core\Controller
             header('Location: '."/login");
             die();
         }
+    }
+
+    //Demo of DB function use cases
+    public function testDBAction(){
+        $database = "sp_test";
+        $table = "tblfilm";
+        $filmName = "test2";
+        $FilmReleaseDate = date("Y-m-d");
+        $FilmRunTimeMinutes = 120;
+        echo sql::db_Insert(
+            $database,
+            $table,
+            [
+                "FilmName"=>$filmName,
+                "FilmReleaseDate"=>$FilmReleaseDate,
+                "FilmRunTimeMinutes"=>$FilmRunTimeMinutes
+            ]);
+        echo sql::db_Select(
+            $database,
+            $table,
+            "*",
+            "FilmName='".$filmName."' AND FilmRunTimeMinutes='".$FilmRunTimeMinutes."'"
+        );
+        echo sql::db_Update($database,$table,"FilmName='test991'","FilmName='".$filmName."' AND FilmRunTimeMinutes='120'");
     }
 }
