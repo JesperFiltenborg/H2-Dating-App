@@ -25,7 +25,20 @@
 {% block body %}
 <div class="container col-8">
     <div class="card p-4 border-dark" style="background-color: rgba(255,255,255,0.97); height: 93vh">
-        SwipePage
+        <div class="container">
+            <div>
+                <img class="img-fluid" style="width: 50%; margin: 0 25%;" src="https://picture-cdn.wheretoget.it/eoqyk4-l-610x610-sweater-black-hoodie-antisocial+social+club-girl-women.jpg">
+            </div>
+            <div>
+                <p style="font-weight: bold; font-size: 2em; margin: 0 25%;">Daniel, 22</p>
+                <p style="font-weight: bold; font-size: 1.3em; margin: 0 25%;">Allerød, Denmark</p>
+                <p style="font-size: 1.1em; margin: 0 22%; z-index:999; position: absolute; width: 50%;">Description here</p>
+            </div>
+            <div style="height:50%;display:flex;align-items: flex-end;justify-content: center; z-index: 1;">
+                <button name="like" type="button" class="btn btn-success">Like</button>
+                <button name="dislike" type="button" class="btn btn-danger">Dislike</button>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
