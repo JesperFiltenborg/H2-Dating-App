@@ -7,6 +7,7 @@ CREATE TABLE account(
     id INT AUTO_INCREMENT PRIMARY KEY,
     city int,
     username VARCHAR(255),
+    password VARCHAR(255) CHARSET utf8 NOT NULL,
     phone int,
     email VARCHAR(255) CHARSET utf8,
     address VARCHAR(30),

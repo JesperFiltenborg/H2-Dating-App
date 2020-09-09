@@ -31,6 +31,7 @@ class Login extends \Core\Controller
     public function logout_attemptAction(){
         //todo Make a function to check the database for matching username and password
         $_SESSION["LoginState"] = 0;
+        unset($_SESSION["acc_id"]);
         header('Location: '.$_SESSION["htmlPath"]);
         die();
     }

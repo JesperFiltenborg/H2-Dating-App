@@ -20,9 +20,19 @@ class Home extends \Core\Controller
      */
     public function indexAction()
     {
-        View::renderTemplate('base.html', [
-            "log_setting"   => "Login"
-        ]);
+        if(isset($_SESSION["LoginState"])&&$_SESSION["LoginState"] == 1){
+            View::renderTemplate('Home/Swipe_Page.html',[
+                "log_setting"   => "Logout",
+                "baseUrl"       => $_SESSION["htmlPath"]
+            ]);
+        }
+        else{
+            $_SESSION["LoginState"] = 0;
+            unset($_SESSION["acc_id"]);
+            View::renderTemplate('base.html', [
+                "log_setting"   => "Login"
+            ]);
+        }
     }
     public function swipe_pageAction(){
         if(isset($_SESSION["LoginState"])&&$_SESSION["LoginState"] == 1){
@@ -33,6 +43,7 @@ class Home extends \Core\Controller
         }
         else{
             $_SESSION["LoginState"] = 0;
+            unset($_SESSION["acc_id"]);
             header('Location: '."/login");
             die();
         }

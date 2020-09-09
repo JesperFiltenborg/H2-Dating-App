@@ -42,14 +42,8 @@ class sql
         $connection = new \mysqli(Config::DB_NAME, Config::DB_HOST, Config::DB_PASSWORD, $database) or die("Unable to connect to database");
 
         $result = $connection->query(sprintf("SELECT %s FROM %s WHERE %s",$columns,$table,$where));
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                echo json_encode($row)."<br>";
-            }
-        } else
-            echo "0 results";
-
         $connection->close();
+        return $result->fetch_assoc();
     }
 
     public static function db_Update($database, $table, $columns, $where = ""){

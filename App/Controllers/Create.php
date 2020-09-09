@@ -18,17 +18,10 @@ class Create extends \Core\Controller
      * @return void
      */
     public function Create_LoginAction(){
-        if(isset($_SESSION["LoginState"])&&$_SESSION["LoginState"] == 1){
-            View::renderTemplate('Home/Create_Login_Info.html',[
-                "log_setting" => "",
-                "baseUrl"       => $_SESSION["htmlPath"]
-            ]);
-        }
-        else{
-            $_SESSION["LoginState"] = 0;
-            header('Location: '."/login");
-            die();
-        }
+        View::renderTemplate('Home/Create_Login_Info.html',[
+            "log_setting" => "",
+            "baseUrl"       => $_SESSION["htmlPath"]
+        ]);
     }
     public function Create_AccountAction()
     {
@@ -40,6 +33,7 @@ class Create extends \Core\Controller
         }
         else{
             $_SESSION["LoginState"] = 0;
+            unset($_SESSION["acc_id"]);
             header('Location: '."/login");
             die();
         }
@@ -54,6 +48,7 @@ class Create extends \Core\Controller
         }
         else{
             $_SESSION["LoginState"] = 0;
+            unset($_SESSION["acc_id"]);
             header('Location: '."/login");
             die();
         }

@@ -42,6 +42,11 @@ $router->add('create/profile', ['controller' => 'Create', 'action' => 'Create_Pr
 $router->add('profile', ['controller' => 'Login', 'action' => 'profile_page']);
 $router->add('swipe_page', ['controller' => 'Home', 'action' => 'swipe_page']);
 $router->add('matches', ['controller' => 'Login', 'action' => 'matches_page']);
+
+//Database Routes
+$router->add('database/create/login', ['controller' => 'database', 'action' => 'insertNewLogin']);
+
+
 $router->add('{controller}/{action}');
     
 $router->dispatch($_SERVER['QUERY_STRING']);

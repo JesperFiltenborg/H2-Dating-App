@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="111fc9ce-6704-435b-85af-7fc70c034eb9" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,9 +27,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -67,7 +83,7 @@
       <recent name="C:\Users\Owner\Documents\H2-Dating-App\App\Models" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -86,11 +102,26 @@
       <workItem from="1599213633120" duration="7163000" />
       <workItem from="1599319673119" duration="13493000" />
       <workItem from="1599583344741" duration="6872000" />
+      <workItem from="1599631778714" duration="49000" />
+      <workItem from="1599631845707" duration="47000" />
+      <workItem from="1599632102664" duration="65000" />
+      <workItem from="1599632307857" duration="8231000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597070706886">
@@ -114,10 +145,11 @@
     </state>
     <state x="724" y="334" key="NewPhpClassDialog/-3000.-540.1080.1880/1920.0.1920.1040/-1920.-108.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599133026433" />
     <state x="724" y="334" key="NewPhpClassDialog/0.0.1920.1040/-3000.-540.1080.1880/1920.0.1920.1040/-1920.-108.1920.1040@0.0.1920.1040" timestamp="1599320193825" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1597392726606">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="635" y="351" key="NewPhpFileDialog" timestamp="1599632738685">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/-3000.-540.1080.1880/1920.0.1920.1040/-1920.-108.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1597392726606" />
+    <state x="635" y="351" key="NewPhpFileDialog/0.0.1536.824/0.2160.2194.629@0.0.1536.824" timestamp="1599632738685" />
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1599319685121">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -130,20 +162,21 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2028" y="0" width="1397" height="1028" key="dock-window-1/-3000.-540.1080.1880/1920.0.1920.1040/-1920.-108.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599583803359" />
-    <state x="473" y="172" width="590" height="592" key="find.popup" timestamp="1599458588972">
+    <state x="473" y="172" width="590" height="616" key="find.popup" timestamp="1599642446725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="591" y="217" width="737" height="606" key="find.popup/-3000.-540.1080.1880/1920.0.1920.1040/-1920.-108.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599132957474" />
-    <state x="473" y="172" width="590" height="592" key="find.popup/0.0.1536.824/0.2160.2194.629@0.0.1536.824" timestamp="1599458588972" />
+    <state x="473" y="172" width="590" height="616" key="find.popup/0.0.1536.824/0.2160.2194.629@0.0.1536.824" timestamp="1599642446725" />
     <state x="591" y="217" width="737" height="606" key="find.popup/0.0.1920.1040/-3000.-540.1080.1880/1920.0.1920.1040/-1920.-108.1920.1040@0.0.1920.1040" timestamp="1599219257812" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1599585511232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/-3000.-540.1080.1880/1920.0.1920.1040/-1920.-108.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599585511232" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-3000.-540.1080.1880/1920.0.1920.1040/-1920.-108.1920.1040@0.0.1920.1040" timestamp="1599216606787" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599591841219">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1599642094236">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-3000.-540.1080.1880/1920.0.1920.1040/-1920.-108.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1599591841219" />
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824/0.2160.2194.629@0.0.1536.824" timestamp="1599642094236" />
   </component>
 </project>
