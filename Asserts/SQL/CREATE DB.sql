@@ -44,6 +44,13 @@ CREATE TABLE photos(
     url9 VARCHAR(500) DEFAULT NULL
 );
 
+CREATE TABLE matchTable(
+    id          INT AUTO_INCREMENT PRIMARY KEY,
+    reqID       INT NOT NULL,
+    requestedID INT NOT NULL,
+    isMatch     INT(1) DEFAULT NULL
+)
+
 CREATE TABLE city(
 	city INT PRIMARY KEY,
     zipcode int(4)

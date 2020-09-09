@@ -4,20 +4,17 @@
 {% block aside %}
 <div class="col-12">
     <div class="card p-4 border-dark" style="background-color: rgba(255,255,255,0.97); height: 93vh">
-        <label for="new_matches">New matches</label>
-        <div id="new_matches" style="overflow: auto;white-space: nowrap;">
-            {% for i in 0..50 %}
-            {{ i }}
-            {% endfor %}
-        </div>
-        <label for="matches">Matches</label>
+        <h1>Matches</h1>
         <div id="matches" style="overflow-x:hidden;height: 80vh; white-space: nowrap;">
             <div class="d-flex flex-column">
-                {% for i in 0..50 %}
-                <div class="p-2"><img class="img-fluid" src="https://picture-cdn.wheretoget.it/eoqyk4-l-610x610-sweater-black-hoodie-antisocial+social+club-girl-women.jpg"></div>
-                <div><p></p></div>
-                {% endfor %}
+                {% for match in matches %}
+                <div class="mb-4">
+                    <div class="p-2"><img class="img-fluid" src="https://picture-cdn.wheretoget.it/eoqyk4-l-610x610-sweater-black-hoodie-antisocial+social+club-girl-women.jpg"></div>
+                    <p style="font-weight: bold; font-size: 2em; margin: 0 25%;">{{match.name}}, {{match.age}}</p>
+                    <p style="font-weight: bold; font-size: 1.3em; margin: 0 25%;">Denmark</p>
                 </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
@@ -25,18 +22,22 @@
 {% block body %}
 <div class="container col-8">
     <div class="card p-4 border-dark" style="background-color: rgba(255,255,255,0.97); height: 93vh">
-        <div class="container">
-            <div>
-                <img class="img-fluid" style="width: 50%; margin: 0 25%;" src="https://picture-cdn.wheretoget.it/eoqyk4-l-610x610-sweater-black-hoodie-antisocial+social+club-girl-women.jpg">
-            </div>
-            <div>
-                <p style="font-weight: bold; font-size: 2em; margin: 0 25%;">Daniel, 22</p>
-                <p style="font-weight: bold; font-size: 1.3em; margin: 0 25%;">Allerød, Denmark</p>
-                <p style="font-size: 1.1em; margin: 0 22%; z-index:999; position: absolute; width: 50%;">Description here</p>
-            </div>
-            <div style="height:50%;display:flex;align-items: flex-end;justify-content: center; z-index: 1;">
-                <button name="like" type="button" class="btn btn-success mr-4" style="width: 5em; box-shadow: 0 4px 0px 0px #166f2a;">Like</button>
-                <button name="dislike" type="button" class="btn btn-danger" style="width: 5em; box-shadow:  0 4px 0px 0px #a51f2c;">Dislike</button>
+        <div class="container" id="swipe">
+            <div style="overflow-x:hidden;height: 80vh; white-space: nowrap;">
+                <div class="d-flex flex-column" style="height: 80vh;">
+                    {% for potential in refreces %}
+                    <div class="col-12" style="margin-bottom: 10vh">
+                        <img class="" style="width: 100%;" src="https://picture-cdn.wheretoget.it/eoqyk4-l-610x610-sweater-black-hoodie-antisocial+social+club-girl-women.jpg">
+                        <p style="font-weight: bold; font-size: 2em; margin: 0 25%;">{{potential.name}}, {{potential.age}}</p>
+                        <p style="font-weight: bold; font-size: 1.3em; margin: 0 25%;">Denmark</p>
+                        <p style="font-size: 1.1em; margin: 0 22%; z-index:999; position: absolute; width: 50%;">{{potential.text}}</p>
+                        <form method="post" action="{{baseUrl}}database/doLike">
+                            <button name="like" value="{{potential.id}}" type="submit" class="btn btn-success float-left col-5" style="width: 5em; box-shadow: 0 4px 0px 0px #166f2a;">Like</button>
+                            <button name="like" value="0" type="submit" class="btn btn-danger float-right col-5" style="width: 5em; box-shadow:  0 4px 0px 0px #a51f2c;">Dislike</button>
+                        </form>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

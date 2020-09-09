@@ -35,12 +35,14 @@ class Login extends \Core\Controller
         elseif ($acc_data["profileID"] == null)
             header('Location: ' . $_SESSION["htmlPath"] . "create/profile");
         else
+            $_SESSION["profile_id"] = $acc_data["profileID"];
             header('Location: '.$_SESSION["htmlPath"]."swipe_page");
     }
     public function logout_attemptAction(){
         //todo Make a function to check the database for matching username and password
         $_SESSION["LoginState"] = 0;
         unset($_SESSION["acc_id"]);
+unset($_SESSION["profile_id"]);
         header('Location: '.$_SESSION["htmlPath"]);
         die();
     }

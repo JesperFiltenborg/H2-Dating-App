@@ -87,4 +87,22 @@ class database extends \Core\Controller
         );
         header('Location: '.$_SESSION["htmlPath"]."swipe_page");
     }
+    public function doLikeAction(){
+        $this->REQ(["like"]);
+        if($_POST["like"] != 0){
+            $exists = sql::db_Select("datingapph2","matchtable","*",sprintf("(reqID='%s' AND requestedID='%s') OR (reqID='%s' AND requestedID='%s')",$_POST["like"],$_SESSION["profile_id"],$_SESSION["profile_id"],$_POST["like"]));
+            if($exists != null){
+                $request = sql::db_Update("datingapph2","matchtable","isMatch='1'","id='".$exists["id"]."'");
+                header('Location: '.$_SESSION["htmlPath"]."swipe_page");
+            }else{
+                sql::db_Insert("datingapph2","matchtable",[
+                    "reqID" => $_SESSION["profile_id"],
+                    "requestedID" => $_POST["like"]
+                ]);
+                header('Location: '.$_SESSION["htmlPath"]."swipe_page");
+            }
+        }elseif($_POST["like"] == 0){
+            header('Location: '.$_SESSION["htmlPath"]."swipe_page");
+        }
+    }
 }

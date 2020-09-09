@@ -34,6 +34,7 @@ class Create extends \Core\Controller
         else{
             $_SESSION["LoginState"] = 0;
             unset($_SESSION["acc_id"]);
+unset($_SESSION["profile_id"]);
             header('Location: '."/login");
             die();
         }
@@ -49,6 +50,7 @@ class Create extends \Core\Controller
         else{
             $_SESSION["LoginState"] = 0;
             unset($_SESSION["acc_id"]);
+unset($_SESSION["profile_id"]);
             header('Location: '."/login");
             die();
         }
