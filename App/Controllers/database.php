@@ -44,8 +44,45 @@ class database extends \Core\Controller
             "password"=>$password,
             "secretKey"=>$secretKey
         ]);
-        $_SESSION["acc_id"] = sql::db_Select("datingapph2","account","id","password='".$password."'");
+        $_SESSION["acc_id"] = sql::db_Select("datingapph2","account","id","password='".$password."'")["id"];
         $_SESSION["LoginState"] = 1;
         header('Location: '.$_SESSION["htmlPath"]."create/account");
     }
+    public function insertNewAccountAction(){
+        $this->REQ(["email","zip_code","city","address","phone_nr"]);
+        $columns = sprintf("phone='%s',email='%s',address='%s'",str_replace("-","",$_POST["phone_nr"]) ,$_POST["email"],$_POST["address"]);
+        $where = sprintf("id='%s'",$_SESSION["acc_id"]);
+        sql::db_Update("datingapph2", "account",
+            $columns,
+            $where
+        );
+        header('Location: '.$_SESSION["htmlPath"]."create/profile");
+    }
+    public function insertNewProfileAction(){
+        $this->REQ(["name","birthday","gender","preference","description"]);
+
+        //This function i copied from https://stackoverflow.com/questions/3776682/php-calculate-age
+        //And rewritten from date input with mm/dd/yyyy format to yyyy-mm-dd
+        $birthDate1 = explode("-", $_POST["birthday"]);
+        $birthDate =[$birthDate1[1], $birthDate1[2], $birthDate1[0]];
+        $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
+            ? ((date("Y") - $birthDate[2]) - 1)
+            : (date("Y") - $birthDate[2]));
+
+        sql::db_Insert("datingapph2","profile", [
+            "firstName"=>$_POST["name"],
+            "sex"=>$_POST["gender"],
+            "age"=>$age,
+            "text"=>$_POST["description"],
+            "activeStatus" => 1,
+            "rating" => 3,
+            "creationDate" => date("Y-m-d"),
+            "banLength" => 0
+        ]);
+
+
+
+        print_r(json_encode($_POST));die();
+    }
+
 }

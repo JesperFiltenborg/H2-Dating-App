@@ -5,6 +5,7 @@ USE DatingAppH2;
 									-- TABLES --
 CREATE TABLE account(
     id INT AUTO_INCREMENT PRIMARY KEY,
+    profileID INT,
     city int,
     username VARCHAR(255),
     password VARCHAR(255) CHARSET utf8 NOT NULL,
@@ -15,11 +16,12 @@ CREATE TABLE account(
 );
 
 CREATE TABLE profile(
-    id INT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     prefsId int,
     photosId int,
     firstName VARCHAR(20),
     lastName VARCHAR(20),
+    age INT(3),
     sex ENUM ('male', 'female', 'other'),
     text VARCHAR(500),
     activeStatus ENUM ('notSearching', 'isSearching', 'deactivated'),

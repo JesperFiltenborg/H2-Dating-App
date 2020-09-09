@@ -45,6 +45,8 @@ $router->add('matches', ['controller' => 'Login', 'action' => 'matches_page']);
 
 //Database Routes
 $router->add('database/create/login', ['controller' => 'database', 'action' => 'insertNewLogin']);
+$router->add('database/create/account', ['controller' => 'database', 'action' => 'insertNewAccount']);
+$router->add('database/create/profile', ['controller' => 'database', 'action' => 'insertNewProfile']);
 
 
 $router->add('{controller}/{action}');

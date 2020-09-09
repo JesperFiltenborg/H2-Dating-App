@@ -7,19 +7,19 @@
     <div class="card p-4 border-dark" style="background-color: rgba(255,255,255,0.87)">
         <h1 class="card-title ml-3">Create Account</h1>
         <div class="card-body ml-3">
-            <form method="get" action="profile">
+            <form method="post" action="{{baseUrl}}database/create/account">
                 <label class="col-12 p-0" for="email">Your e-mail</label>
-                <input id="email" class="col-12 mb-3 pl-1" type="email" placeholder="Email" required>
+                <input id="email" name="email" class="col-12 mb-3 pl-1" type="email" placeholder="Email" required>
 
-                <label class="col-5 p-0" for="zipcode">Zip code</label>
+                <label class="col-5 p-0" for="zip_code">Zip code</label>
                 <label class="col-6 float-right p-0" for="City">City name</label>
-                <input id="zipcode" class="col-5 mr-2 pl-1" type="text" placeholder="Zip code" required>
-                <input id="City" class="col-6 float-right pl-1" type="text" placeholder="City" required>
+                <input id="zip_code" name="zip_code" class="col-5 mr-2 pl-1" type="text" placeholder="Zip code" required>
+                <input id="City" name="city" class="col-6 float-right pl-1" type="text" placeholder="City" required>
 
                 <label class="col-12 mt-3 p-0" for="address">Address</label>
-                <input id="address" class="col-12 mb-3 pl-1" type="text" placeholder="Address" required>
+                <input id="address" name="address" class="col-12 mb-3 pl-1" type="text" placeholder="Address" required>
                 <label class="col-12 p-0" for="phone">Phone number</label>
-                <input id="phone" type="tel" class="col-12 pl-1" placeholder="0000-0000">
+                <input id="phone" name="phone_nr" type="tel" class="col-12 pl-1" placeholder="0000-0000">
                 <input class="col-12 mt-3 btn btn-success" type="submit" value="Create">
             </form>
         </div>

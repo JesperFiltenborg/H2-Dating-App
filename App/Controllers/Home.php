@@ -64,12 +64,13 @@ class Home extends \Core\Controller
                 "FilmReleaseDate"=>$FilmReleaseDate,
                 "FilmRunTimeMinutes"=>$FilmRunTimeMinutes
             ]);
+        /*
         echo sql::db_Select(
             $database,
             $table,
             "*",
             "FilmName='".$filmName."' AND FilmRunTimeMinutes='".$FilmRunTimeMinutes."'"
-        );
+        );*/
         echo sql::db_Update($database,$table,"FilmName='test991'","FilmName='".$filmName."' AND FilmRunTimeMinutes='120'");
     }
 }
