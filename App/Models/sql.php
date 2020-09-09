@@ -54,7 +54,7 @@ class sql
 
     public static function db_Update($database, $table, $columns, $where = ""){
         $connection = new \mysqli(Config::DB_NAME, Config::DB_HOST, Config::DB_PASSWORD, $database) or die("Unable to connect to database");
-        $result = $connection->query(sprintf("UPDATE %s SET %s WHERE %s",$table,$columns,$where)) or die("Unable to Update database");;
+        $result = $connection->query(sprintf("UPDATE %s SET %s WHERE %s",$table,$columns,$where)) or die("Unable to Update database");
         $connection->close();
     }
 }
