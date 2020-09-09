@@ -11,9 +11,12 @@
             {% endfor %}
         </div>
         <label for="matches">Matches</label>
-        <div id="matches" style="overflow-x:scroll;height: 80vh; white-space: nowrap;"  >
-            {% for i in 0..50 %}
-            {% endfor %}
+        <div id="matches" style="overflow-x:hidden;height: 80vh; white-space: nowrap;">
+            <div class="d-flex flex-column">
+                {% for i in 0..50 %}
+                <div><img class="p-2 img-fluid" src="https://picture-cdn.wheretoget.it/eoqyk4-l-610x610-sweater-black-hoodie-antisocial+social+club-girl-women.jpg"></div>
+                {% endfor %}
+                </div>
         </div>
     </div>
 </div>
