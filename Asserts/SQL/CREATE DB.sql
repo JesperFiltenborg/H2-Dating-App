@@ -17,23 +17,18 @@ CREATE TABLE account(
 
 CREATE TABLE profile(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    prefsId int,
+    preferences VARCHAR (20),
     photosId int,
-    firstName VARCHAR(20),
-    lastName VARCHAR(20),
+    name VARCHAR(20),
     age INT(3),
-    sex ENUM ('male', 'female', 'other'),
+    birthday VARCHAR (10),
+    sex VARCHAR (20),
     text VARCHAR(500),
-    activeStatus ENUM ('notSearching', 'isSearching', 'deactivated'),
+    activeStatus INT,
     appearance VARCHAR(30),
   	rating INT(5) DEFAULT 2,
     creationDate DATE DEFAULT NOW(),
     banLength DATE DEFAULT NULL
-);
-
-CREATE TABLE prefs(
-	id INT PRIMARY KEY,
-    sexuality ENUM ('male', 'female', 'all')
 );
 
 CREATE TABLE photos(
@@ -56,17 +51,10 @@ CREATE TABLE city(
 
 									-- ALTERS --
 ALTER TABLE account
-ADD FOREIGN KEY (city) 
+ADD FOREIGN KEY (city)
 REFERENCES city(city);
-
-ALTER TABLE profile
-ADD FOREIGN KEY (id)
-REFERENCES account(id);
-
-ALTER TABLE prefs
-ADD FOREIGN KEY (id)
-REFERENCES profile(id);
 
 ALTER TABLE photos
 ADD FOREIGN KEY (id)
 REFERENCES profile(id);
+

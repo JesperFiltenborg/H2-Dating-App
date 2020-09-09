@@ -70,19 +70,21 @@ class database extends \Core\Controller
             : (date("Y") - $birthDate[2]));
 
         sql::db_Insert("datingapph2","profile", [
-            "firstName"=>$_POST["name"],
+            "name"=>$_POST["name"],
             "sex"=>$_POST["gender"],
             "age"=>$age,
+            "birthday"=>$_POST["birthday"],
             "text"=>$_POST["description"],
+            "preferences"=>$_POST["preference"],
             "activeStatus" => 1,
             "rating" => 3,
-            "creationDate" => date("Y-m-d"),
-            "banLength" => 0
         ]);
+        $_SESSION["profile_id"] = sql::db_Select("datingapph2","profile","id",sprintf("name='%s' AND birthday='%s' AND sex='%s'",$_POST["name"],$_POST["birthday"],$_POST["gender"]))["id"];
 
-
-
-        print_r(json_encode($_POST));die();
+        sql::db_Update("datingapph2", "account",
+            "profileID='".$_SESSION["profile_id"]."'",
+            "id='".$_SESSION["acc_id"]."'"
+        );
+        header('Location: '.$_SESSION["htmlPath"]."swipe_page");
     }
-
 }

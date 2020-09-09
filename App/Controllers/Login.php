@@ -22,11 +22,20 @@ class Login extends \Core\Controller
         ]);
     }
     public function login_attemptAction(){
-        $params = $GLOBALS["_GET"];
-        //todo Make a function to check the database for matching username and password
+        $acc_data = sql::db_Select("datingapph2","account","password, secretKey","username='".$_POST["username"]."'");
+        if(hash("sha256",$_POST["password"].$acc_data["secretKey"])!=$acc_data["password"]){
+            header('Location: '.$_SESSION["htmlPath"]."login");
+            die();
+        }
         $_SESSION["LoginState"] = 1;
-        header('Location: '.$_SESSION["htmlPath"]."create/account");
-        die();
+        $acc_data = sql::db_Select("datingapph2","account","email, profileID, id","password='".$acc_data["password"]."'");
+        $_SESSION["acc_id"] = $acc_data["id"];
+        if($acc_data["email"] == null)
+            header('Location: ' . $_SESSION["htmlPath"] . "create/account");
+        elseif ($acc_data["profileID"] == null)
+            header('Location: ' . $_SESSION["htmlPath"] . "create/profile");
+        else
+            header('Location: '.$_SESSION["htmlPath"]."swipe_page");
     }
     public function logout_attemptAction(){
         //todo Make a function to check the database for matching username and password
